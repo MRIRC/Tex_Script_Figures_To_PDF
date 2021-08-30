@@ -1,0 +1,115 @@
+\documentclass[slidestop,compress,11pt,xcolor=dvipsnames]{beamer}
+\geometry{letterpaper,landscape}\usetheme{Madrid}
+\useoutertheme{miniframes} % Alternatively: miniframes, infolines, split
+\useinnertheme{circles}
+
+\definecolor{UBCblue}{rgb}{0.04706, 0.13725, 0.26667} % UBC Blue (primary)
+\setbeamerfont{frametitle}{size=\Huge}
+
+\usecolortheme[named=UBCblue]{structure}
+
+\usepackage[bars]{beamerthemetree} % Beamer theme v 2.2
+\usepackage{multicol}
+\usepackage{lmodern}
+
+\usepackage{marvosym}
+
+\title{PIDS ANALYSIS}
+\author{Teodora Szasz, Aritrick Chatterjee, Dr. Grace Lee}
+
+
+\begin{document}
+
+\newcommand\SubImageER[3]{%
+\includegraphics[width=#1\textwidth,height=#2\textwidth]{C:/Users/rcc/Documents/Projects/MRIRC/TexProgram_generate_slides/Tex_script_figures_to_pdf/Tex_Script_Figures_To_PDF/Figures/ERcoil/#3}
+}
+
+\newcommand\SubImage[3]{%
+\includegraphics[width=#1\textwidth,height=#2\textwidth]{C:/Users/rcc/Documents/Projects/MRIRC/TexProgram_generate_slides/Tex_script_figures_to_pdf/Tex_Script_Figures_To_PDF/Figures/NoERcoil/#3}
+}
+
+
+\newcommand\PatientSlide[7]{%
+\begin{frame}
+\frametitle{Patient #1 #2 - slice #3}
+\vspace{1in}
+\begin{columns}[t]
+\column{.2\textwidth}
+\centering
+\SubImageER{1.1}{1.1}{#1/#7/DWI_at_bo}\\
+\SubImageER{1.1}{1.1}{#1/#7/Outlined_prostate}
+\column{.2\textwidth}
+\centering
+\SubImageER{1.1}{1.1}{#1/#7/ADC_PIDS_voxels}\\
+\SubImageER{1.1}{1.1}{#1/#7/Final_PIDS_entire_prostate}\\
+\% of PISS voxels – entire = #4
+\column{.2\textwidth}
+\centering
+\SubImageER{1.1}{1.1}{#1/#7/PIDS_voxels}\\
+\column{.2\textwidth}
+\centering
+\SubImageER{1.1}{1.1}{#1/#7/Outlined_central_part_prostate}\\
+\SubImageER{1.1}{1.1}{#1/#7/Final_PIDS_central_prostate}\\
+\% of PISS voxels – central = #5
+\column{.2\textwidth}
+\centering
+\SubImageER{1.1}{1.15}{#1/#7/Outlined_peripheral_part_prostate}\\
+\SubImageER{1.1}{1.1}{#1/#7/Final_PIDS_peripheral_prostate}\\
+\% of PISS voxels – peripheral = #6
+\end{columns}
+\end{frame}
+}
+
+\newcommand\PatientSlideNoER[7]{%
+\begin{frame}
+\frametitle{Patient #1 #2 - slice #3}
+\vspace{1in}
+\begin{columns}[t]
+\column{.2\textwidth}
+\centering
+\SubImage{1.1}{1.1}{#1/#7/DWI_at_bo}\\
+\SubImage{1.1}{1.1}{#1/#7/Outlined_prostate}
+\column{.2\textwidth}
+\centering
+\SubImage{1.1}{1.1}{#1/#7/ADC_PIDS_voxels}\\
+\SubImage{1.1}{1.1}{#1/#7/Final_PIDS_entire_prostate}\\
+\% of PISS voxels – entire = #4
+\column{.2\textwidth}
+\centering
+\SubImage{1.1}{1.1}{#1/#7/PIDS_voxels}\\
+\column{.2\textwidth}
+\centering
+\SubImage{1.1}{1.1}{#1/#7/Outlined_central_part_prostate}\\
+\SubImage{1.1}{1.1}{#1/#7/Final_PIDS_central_prostate}\\
+\% of PISS voxels – central = #5
+\column{.2\textwidth}
+\centering
+\SubImage{1.1}{1.15}{#1/#7/Outlined_peripheral_part_prostate}\\
+\SubImage{1.1}{1.1}{#1/#7/Final_PIDS_peripheral_prostate}\\
+\% of PISS voxels – peripheral = #6
+\end{columns}
+\end{frame}
+}
+
+\begin{frame}
+\frametitle{Patients WITH ER coil}
+The following are the results of the PIDS Analysis for 30 patients with ER Coil. Data was acquired using Philips scanner.
+\end{frame}
+
+\PatientSlide{4}{APEX}{10}{47.4989}{62.5164}{40.2284}{apex}
+\PatientSlide{4}{MID}{12}{30.7920}{34.9256}{28.2867}{mid}
+\PatientSlide{4}{BASE}{16}{27.4254}{27.7961}{26.9397}{base}
+
+
+\begin{frame}
+\frametitle{Patients WITHOUT ER coil}
+The following are the results of the PIDS Analysis for 20 patients without ER Coil. Data from Guerbet study.
+\end{frame}
+
+
+\PatientSlideNoER{4}{APEX}{8}{11.1369}{6.0465}{12.1521}{apex}
+\PatientSlideNoER{4}{MID}{11}{6.4728}{4.0936}{8.5744}{mid}
+\PatientSlideNoER{4}{BASE}{16}{4.5891}{4.5566}{4.6512}{base}
+
+
+\end{document}
