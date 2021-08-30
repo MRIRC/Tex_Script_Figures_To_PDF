@@ -1,16 +1,12 @@
 # Tex_Script_Figures_To_PDF
  Script to automatically add large number of figures to slides as PDF format
  
- Install MiKTeX: https://miktex.org/download
+ 1. Install MiKTeX: https://miktex.org/download
  
  
- Open PIDSAnalysis_results.tex.
+ 2. Open PIDSAnalysis_results.tex using TeXworks
  
- 
-
- Download the figures in the folder Figures
- 
- Change the paths of the Figures inside: 
+ 3. Change the paths of the Figures inside to the ones in your computer:
  
 \newcommand\SubImageER[3]{%
 \includegraphics[width=#1\textwidth,height=#2\textwidth]{C:/Users/rcc/Documents/Projects/MRIRC/TexProgram_generate_slides/Tex_script_figures_to_pdf/Tex_Script_Figures_To_PDF/Figures/ERcoil/#3}
@@ -20,6 +16,8 @@
 \includegraphics[width=#1\textwidth,height=#2\textwidth]{C:/Users/rcc/Documents/Projects/MRIRC/TexProgram_generate_slides/Tex_script_figures_to_pdf/Tex_Script_Figures_To_PDF/NoERcoil/#3}
 }
 
- Run TeXworks.
+ 4. Run TeXworks.
  
- Install the missing packages when prompted to install them in MiKTeX.
+ 5. Install the missing packages when prompted to install them in MiKTeX.
+ 6. You should get the generated PDF.
+ 7. Enjoy!
